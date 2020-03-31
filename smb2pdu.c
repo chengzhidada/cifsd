@@ -2578,7 +2578,7 @@ int smb2_open(struct ksmbd_work *work)
 			}
 		} else {
 			rc = ksmbd_vfs_kern_path(name, 0, &path, 1);
-			if (d_is_symlink(path.dentry)) {
+			if (!rc && d_is_symlink(path.dentry)) {
 				rc = -EACCES;	
 				goto err_out1;
 			}
