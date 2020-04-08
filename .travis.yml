@@ -93,7 +93,7 @@ script:
 
  # Run xfstests testsuite
  - cd ../cifsd
- - make > /dev/null
+ - make
  - sudo make install > /dev/null
  - sudo modprobe ksmbd
  - sudo modprobe cifs
