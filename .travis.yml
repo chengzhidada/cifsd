@@ -230,6 +230,16 @@ script:
 # - time_wait sudo ./check generic/476 (timeover > 10m)
  - sudo ./check generic/490 #fail, It may be cifs client issue on 5.0 kernel
  - sudo ./check generic/504
+ # Run a few xfstests for smb1
+ - cp local.config_smb1 local.config
+ - sudo ./check generic/001
+ - sudo ./check generic/002
+ - sudo ./check generic/005
+ - sudo ./check generic/006
+ - sudo ./check generic/007
+ - sudo ./check generic/011
+ - sudo ./check generic/013
+
 #
 #
 #
