@@ -93,7 +93,8 @@ script:
 
  # Run xfstests testsuite
  - cd ../cifsd
- - make EXTRA_CFLAGS+=-DCONFIG_SMB_INSECURE_SERVER 
+ - make -C /lib/modules/$(uname -r)/build M=$(pwd)
+# - make EXTRA_CFLAGS+-DCONFIG_SMB_SERVER EXTRA_CFLAGS+=-DCONFIG_SMB_INSECURE_SERVER 
  - sudo make install > /dev/null
  - sudo modprobe ksmbd
  - sudo modprobe cifs
